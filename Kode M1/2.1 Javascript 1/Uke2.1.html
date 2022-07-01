@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript test</title>
+  <link rel="stylesheet" href="Style3.css">
+  <script defer src="Script2.js"></script>
+  <script defer src="Variables.js"></script>
+</head>
+
+<body>
+  <div class="Page">
+    <div class="Top">
+      Javascript test 1
+    </div>
+
+    <div class="Mid">
+
+      <br>
+      <h1>------------------1-------------------------</h1>
+      <h3>Onclick test</h3>
+      <h3 id="Best" ondblclick="dblclick(this)">Jeg er nest best</h3>
+      <h3 onclick="Klikk()">Klikk meg for motivasjon <br>
+        eller dobbeltrykk over for suprise!</h3>
+
+      <br>
+      <h1>-------------------------------------------</h1>
+
+      <h3>Spørsmåls test</h3>
+      <div class="Big">Hvilken ost er Oransje?</div>
+      <h4 id="1" onclick="Riktig()" onmouseover="oversikker(this)" onmouseout="outsikker1()"> Cheddar </h4>
+      <h4 id="2" onclick="FeilBrie()" onmouseover="oversikker(this)" onmouseout="outsikker2()"> Brie </h4>
+      <h4 id="3" onclick="Feil()" onmouseover="oversikker(this)" onmouseout="outsikker3()"> Jarlsberg </h4>
+
+      <br>
+      <h1>-------------------2------------------------</h1>
+
+      <h3>Endrings tester</h3>
+      <div onclick="Change(this)" class="button">Click Me</div>
+      <br>
+      <h3>Type counter</h3>
+      <div class="input">
+        <input type="text" oninput="input1()" onchange="onchange1()">
+        <h4 id="oninput1"></h4>
+        <h5 id="onchange1"></h5>
+      </div>
+
+      <h1>--------------------3-----------------------</h1>
+
+      <div id="picture1"></div>
+      <h3>Nøkkel ord "this"</h3>
+      <div class="tabell">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="2">Table test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <colgroup span="2"></colgroup>
+            <tr>
+              <td onclick="Show(this)">Henrik</td>
+              <td onclick="Show(this)">Andrine</td>
+            </tr>
+            <tr>
+              <td onclick="Show(this)">Frederik</td>
+              <td onclick="Show(this)">Emil</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+      <h1>---------------------4----------------------</h1>
+
+      <div>
+        <h3>Variabel utenfor <wbr/>og innenfor funksjon, <wbr/>og sette sammen tekst av flere deler</h3>
+        <button2 onclick="tell()">Tell!</button>
+          <div id="info">Trykk på knappen!</div>
+      </div>
+
+      <br>
+      <h1>-------------------------------------------</h1>
+
+      <h3>Passkode test</h3>
+      <div class="B-board">
+        <div class="brow1">
+          <button id="b1" onclick="knapp(this.innerHTML)">1</button>
+          <button id="b2" onclick="knapp(this.innerHTML)">2</button>
+          <button id="b3" onclick="knapp(this.innerHTML)">3</button>
+        </div>
+        <div class="brow2">
+          <button id="b4" onclick="knapp(this.innerHTML)">4</button>
+          <button id="b5" onclick="knapp(this.innerHTML)">5</button>
+          <button id="b6" onclick="knapp(this.innerHTML)">6</button>
+        </div>
+        <div class="brow3">
+          <button id="b7" onclick="knapp(this.innerHTML)">7</button>
+          <button id="b8" onclick="knapp(this.innerHTML)">8</button>
+          <button id="b9" onclick="knapp(this.innerHTML)">9</button>
+        </div>
+      </div>
+      <br>
+      <h4>Passcode:</h4>
+      <div class="kode" id="kode"></div>
+      <Button onclick="subkode()">Submit</Button>
+      <div></div>
+
+      <br>
+      <h1>-------------------6------------------------</h1>
+
+      <h3>Sammensetning av flere deler og å bygge HTML dynamisk</h3>
+      <p>Size Slider:</p>
+      <input id="sizeSlider" type="range" min="100" max="300" step="5" oninput="showDiv()">
+      <p>Border radius:</p>
+      <input id="borderSlider" type="range" min="0" max="150" step="5" oninput="showDiv()">
+      <br><input id="textInput" type="text" oninput="showDiv()" value="endre Teksten!">
+      <select id="colorChooser" onchange="showDiv()">
+        <option value="rgb(187, 46, 46)">Red color</option>
+        <option selected value="lime">Green color</option>
+        <option value="rgb(67, 151, 230)">Blue color</option>
+      </select>
+      <select id="borderType" onchange="showDiv()">
+        <option value="rgb(69, 70, 71)">grey</option>
+        <option value="white">white</option>
+        <option value="black">black</option>
+      </select>
+      <div class="chooserCenter">
+        <div id="resultat"></div>
+        <div id="resultat" style="font-family: monospace"></div>
+      </div>
+
+      <br>
+      <h1>---------------------7----------------------</h1>
+    
+    
+      <h3>Sette variabel til resultat av et regnestykke</h3>
+      <input id="tall1" type="range" min="1" max="100" step="1" oninput="calc()" value="2" />
+      <input id="tall2" type="range" min="1" max="100" step="1" oninput="calc()" value="2" />
+      <br>
+      <div id="math"></div>
+      
+      <br>
+      <h1>-------------------------------------------</h1>
+    </div>
+    <div class="Bottom">
+      <i>Footer:</i>
+      <i>Ingenting å se her!</i>
+    </div>
+  </div>
+
+</body>
+
+</html>

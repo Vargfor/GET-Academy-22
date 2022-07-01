@@ -1,0 +1,67 @@
+
+
+body {
+    justify-content: center;
+    padding-left: 500px;
+}
+
+.block {
+    display: grid;
+    height: 100px;
+    width: 100px;
+    border: solid #000000 2px;
+    float: left;
+    
+    grid-column-end: 1;
+    grid-column-end: 10;
+    grid-template-columns: 10;
+    grid-column: 5;
+} 
+
+.firstInLine {
+    clear: left;
+}
+
+.backgroundcolor {
+    background-color: #333333;
+}
+
+.X-team2{
+    padding: 15px;
+    text-align: center;
+    background:#1abc9c;
+    color: brown;
+    font-size: 25px; 
+    margin-bottom: 15px;
+     
+}
+
+.white{
+    background-color: white;
+}
+
+.corners{
+border-radius: 25px;
+background: #1abc9c;
+width: 600px;
+height: 150px;
+}
+
+img {
+    height: 100px;
+    width: 100px;    
+}
+
+.btn {
+    height: 50px;
+    width: 70px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 275px;
+}
+
+
+.imagePuzzle{
+    padding: 2px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamOppgave</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="load()">
+
+<h1 class="Header" ondblclick="names()"> X-Team 2</h1>
+
+<div id="parentBlock">
+    <div>
+        <div id="1" class="block pink" onclick="changeColor(this)"></div>
+        <div id="2" class="block white" onclick="changeColor(this)"></div>
+        <div id="3" class="block pink" onclick="changeColor(this)"></div>
+    </div>
+    <div>
+        <div id="4" class="firstInLine block white" onclick="changeColor(this)"></div>
+        <div id="5" class="block pink" onclick="changeColor(this)"></div>
+        <div id="6" class="block white" onclick="changeColor(this)"></div>
+    </div>
+    <div> 
+        <div id="7" class="firstInLine block pink" onclick="changeColor(this)"></div>
+        <div id="8" class="block white" onclick="changeColor(this)"></div>
+        <div id="9" class="block pink" onclick="changeColor(this)"></div>
+    </div>
+    <div>
+
+        <button onclick="updateDiv()"> Reload </button> <button onclick="changeImg()"> Background</button>
+    </div>
+</div>
+</body>
+</html>

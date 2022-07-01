@@ -1,0 +1,16 @@
+.bamse {
+    max-height: 500px;
+}
+
+.hus {
+    max-height: 600px;
+}
+
+.text {
+    font-size: large;
+}
+
+.select {
+    /* transform: scale(1.2); */
+    font-size: medium;
+}

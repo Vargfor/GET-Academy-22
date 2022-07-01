@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tre på rad</title>
+    <style type="text/css">
+        div {
+            user-select: none;
+        }
+
+        div.cell {
+            background-color: lightgray;
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 2px;
+            font-size: 500%;
+            font-family: helvetica;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        div.first {
+            clear: left;
+        }
+
+        div.coloro {
+            color: blue;
+        }
+
+        div.colorx {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+
+        const app = document.getElementById('app');
+        //MODEL
+        let board = ["", "", "", "", "", "", "", "", ""]
+        // lage winning true/false greie her
+
+
+
+        //VIEW
+        drawHTML();
+        function drawHTML() {
+            //tegne opp 3x3 diver - hvorav 1, 3 & 9  skal ha first klasse
+            //modulus?
+
+            let html = '';
+
+
+            for (let i = 0; i < 9; i++) {
+                let first = i % 3 == 0 ? 'first' : '';
+                html += `<div onclick="setX(${i})" class=" cell ${first}">${board[i]}</div>`;
+            }
+
+            app.innerHTML = html;
+
+        }
+
+
+        //CONTROLLER
+        function setX(params) {
+            //er det tre x'er elns? set winning til true
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

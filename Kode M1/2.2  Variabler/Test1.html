@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+</head>
+<p>Ferdighet 7a - sette variabel til tilfeldig tall</p>
+<div id="resultat"></div>
+
+<script>
+    let resultatDiv = document.getElementById('resultat');
+    calculate()
+
+    function calculate() {
+        let tallA = 100 + Math.floor(Math.random() * 100)
+        let tallB = 100 + Math.floor(Math.random() * 10)
+        let sum = tallA + tallB
+        let differense = tallA - tallB
+        resultatDiv.innerHTML = '' + '<br/>' +
+            tallA + '+' + tallB + '=' + sum + '<br/>' +
+            tallA + '-' + tallB + '=' + differense;
+    }
+
+
+</script>
+<body>
+    
+</body>
+</html>

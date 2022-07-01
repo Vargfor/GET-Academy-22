@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="appDiv"></div>
+
+    <script>
+        let app = document.getElementById('appDiv');
+
+        //modell
+        let colors = ["red","black","blue","green"]
+
+        //View
+        View();
+        function View(){
+            let html = '';
+            // app.innerHTML = /*HTML*/ `
+            // <div>Hei</div>
+            // `;
+            for (i =0; i < colors.length; i++){
+            html += crateDiv(i);
+            
+            };
+
+            app.innerHTML = html;
+        }
+
+        function crateDiv(i){
+            return  `<div onclick="changecolor(${i})" style="color:${colors[i]}">Hei</div>`
+        }
+
+        //controller
+        function changecolor(index){
+            if(colors[index] == 'pink'){
+                colors[index] = 'yellow';
+            }else{
+                colors[index] = 'pink';
+            }
+           
+           View();
+
+        }
+
+
+    </script>
+
+</body>
+</html>

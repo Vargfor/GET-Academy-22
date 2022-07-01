@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333333;
+            color: aliceblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+  
+    <script>
+
+        const app = document.getElementById('app');
+        let outputter1= "Tekst";
+        let outputter2 = "Ordvalgs spill";
+        let outputter3 = "";
+        let selectedvar = "selected"
+
+        const optIn = ["Gruppe2","Hunden", "Tirsdag", "Rare"];
+
+        let opt1 = "Gruppe2";
+        let opt2 = "Tirsdag";
+        let opt3 = "Rare";
+        let opt4 = "Hunden";
+
+
+        viewer();
+        function viewer(){
+            app.innerHTML = /*HTML*/`
+            <div> 
+                <div id="tekst1">${outputter2}</div>
+                hei på deg
+                ${selecBox('box1')}
+                hei på deg
+                ${selecBox('box2')}
+                hei på deg
+                ${selecBox('box3')}
+                hei på deg
+                ${selecBox('box4')}
+                hei på deg
+                <div id="tekst2">${outputter1}</div>
+                <br/>
+                <br/>
+                <div onclick="ordklikker(this)">Valg2</div>
+                <br/>
+                <div onclick="ordklikker(this)">Valg1</div>
+            </div>
+            `;
+        }
+
+        function selecBox(boxNumber){
+            return `
+            <select style="width:100px;" name="${boxNumber}" onchange="ordvalg(this)">
+                    <option value=${opt1}>${opt1}</option>
+                    <option value=${opt2}>${opt2}</option>
+                    <option value=${opt3}>${opt3}</option>
+                    <option value=${opt4}>${opt4}</option>
+            </select>`
+        }
+
+
+       // function ordvalg(x){ }
+
+        function ordvalg(x){
+            console.log(x.value)
+            if (x.value == opt3){
+                window.alert("riktig");
+            }
+                else {
+                console.log ("error");
+            }
+               
+            //viewer();
+        }
+
+        
+
+        // selectedVariableX hvor X er lik parameter X.value
+        // eller kanskje:
+        // IF (x.value = 1) selectedVariable1 = "selected";
+        //og forraen alle iffene kan man sette selectedVariable1, selectedVariable2, selectedVariable3, selectedVariable4 lik null.
+    </script>
+</body>
+</html>

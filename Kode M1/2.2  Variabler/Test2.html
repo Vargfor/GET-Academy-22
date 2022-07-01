@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .stilig {
+                background-color: blueviolet;
+            }
+            .stilig2 {
+                padding: 10px;
+                border: 5px solid blue;
+            }
+            div.selected::before {
+            content: "🡆";
+            }
+
+            div.selected::after {
+            content: "🡄";
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bla">Bla bla bla</div>
+        <div id="bla2">Bla bla bla</div>
+        <div id="bla3">Bla bla bla</div>
+        <input id="chk" type="checkbox" onchange="toggleStyle()" />
+
+
+        <script>
+            
+            function toggleStyle() {
+                // var isChecked = document.getElementById('chk').checked;
+                 document.getElementById('bla').classList.toggle('stilig', isChecked);
+                // document.getElementById('bla2').classList.toggle('stilig2', isChecked);
+                document.getElementById('chk').checked = selectedDiv.classList.contains('stilig');
+            }
+
+        </script>
+    </body>
+</html>

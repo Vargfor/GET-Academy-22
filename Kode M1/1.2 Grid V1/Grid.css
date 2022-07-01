@@ -1,0 +1,52 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div.Header {
+    color: white;
+    background-color: rgb(0, 144, 211);   
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    grid-area: Header;
+
+}
+
+div.sidebar {
+    grid-area: sidebar;
+
+}
+
+div.nav{
+    color: rgb(209, 0, 0);
+    font-size: large;
+}
+
+div.menu{
+    font-size: larger;
+    font-weight: bold;
+}
+
+div.Main {
+    grid-area: Main;
+}
+
+div.footer {
+    background-color: lightgray;
+    color: white;
+    grid-area: footer;
+    text-align: right;
+}
+
+.page {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr 10fr 50px;
+    grid-template-areas:
+        'Header Header'
+        'sidebar Main'
+        'footer footer';
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lister og løkker</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+        //Modell
+        
+        const personList = ['Therese', 'Terje', 'Linn', 'Geir', 'Eskil']
+        const secondPersonList = ['Odd', 'Kåre', 'Per', 'Line', 'Mina']
+        // Index starter *Alltid* på 0 
+        let newName = '';
+        
+
+        //View
+        View();
+        function View() {
+            let html = '';
+
+            // html += `<div>${personList.join('<br>')}</div>`
+
+            for(let i = 0; i < personList.length; i++){
+                html += `<div onclick="changePersonName(${i})">${personList[i]}</div> 
+                <button onclick="deletePerson(${i})">x</button> <hr>`;
+            }
+
+            html += `<input type="text" oninput="newName = this.value"> 
+            <button onclick="addNewPerson()">Legg Til</button>`;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+
+        //controller
+
+        function changePersonName(index) {
+            let random = Math.floor(Math.random()* secondPersonList.length);
+            personList[index] = secondPersonList[random];
+            View();
+        }
+
+        function addNewPerson() {
+            personList.push(newName);
+            View();
+        }
+
+        function deletePerson(index) {
+            personList.splice(index, 1)
+            View();
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

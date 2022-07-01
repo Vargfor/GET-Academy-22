@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model View Controller</title>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+        //hjelpevariabel
+        let appDiv = document.getElementById('app');
+
+        //model
+        let nameValue ='';
+        let age = '';
+
+        //view
+        show();
+        function show() {
+            let html = '';
+
+            html += /*HTML*/ 
+            `<h1>MVC</h1>
+            <input type="text" oninput="name = this.value">
+            <button onClick="showName">vis navn</button>
+            <div> ${nameValue} </div>
+            <button onClick="count(10)">10</button>
+            <button onClick="count(20)">20</button>
+            <button onClick="count(30)">30</button>
+            <div>${age}</div>
+            `
+            appDiv.innerHTML = html
+        }
+
+        //controller
+
+        function showName() {
+            //huskeregel er at controller funksjon skal kalle view funksjonen
+            show()
+        }
+
+         function count(ageValue) {
+             age += ageValue;
+             show();
+         }
+
+        // function count(ageValue) {
+        //     age <= 100 ?
+        //     age += ageValue :
+        //     errorMsg = 'du er for gammel';
+
+        //     show();
+        // }
+
+    </script>
+
+
+            <!-- THIS -->
+            
+     <!-- <DIV ONCLICK="SHOWNAME(THIS)">HÅKON</DIV>
+
+    <DIV ONCLICK="SHOWNAME(THIS)">HENRIK</DIV>
+
+    <INPUT TYPE="TEXT" ONINPUT="SHOWINPUT(THIS.VALUE)">
+
+    <SCRIPT>
+        FUNCTION SHOWNAME(ELEMENT) {
+            CONSOLE.LOG(ELEMENT.INNERHTML)
+        }
+        FUNCTION SHOWINPUT(INPUTVALUE) {
+            CONSOLE.LOG(INPUTVALUE)
+        }
+
+
+    </script> -->
+
+
+</body>
+</html>

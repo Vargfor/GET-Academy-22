@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <title> Alpha</title>
+<style>
+    div {
+    color: rgb(122, 2, 2);
+    background-color: goldenrod;
+    padding: 10px;
+    margin: 10px;
+    border: solid black 2px;
+    width: 25px;
+    height: 25px;
+    float: left;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+    h2 {
+    color: rgb(187, 187, 187);
+    background-color: rgb(146, 19, 19);
+    padding: 10px;
+    margin: 10px;
+    border: solid black 2px;
+    text-align: center; 
+}
+
+    body {
+    background-color: rgb(221, 220, 220);
+}
+
+    .select {
+        clear: left;
+}
+</style>
+</head>
+<body>
+    <h2>Sort the numbers</h2>
+    <div id="r1k1" onclick="trykk(this,'r1k2','r2k1')">3</div>
+    <div id="r1k2" onclick="trykk(this,'r1k1','r1k3','r2k2')">8</div>
+    <div id="r1k3" onclick="trykk(this,'r1k2','r2k3')">2</div>
+
+    <div id="r2k1" class="select" onclick="trykk(this,'r2k2','r1k1','r3k1')">1</div>
+    <div id="r2k2" onclick="trykk(this,'r1k2','r2k1','r2k3','r3k2')"></div>
+    <div id="r2k3" onclick="trykk(this,'r1k3','r2k2','r3k3')">6</div>
+
+    <div id="r3k1" class="select" onclick="trykk(this,'r2k1','r3k2')">4</div>
+    <div id="r3k2" onclick="trykk(this,'r2k2','r3k1','r3k3')">7</div>
+    <div id="r3k3" onclick="trykk(this,'r2k3','r3k2')">5</div>
+
+</body>
+<script>
+
+    function trykk(tagElement, alt1, alt2, alt3, alt4) {
+        if(document.getElementById(alt1).innerHTML=='') {
+           document.getElementById(alt1).innerHTML = tagElement.innerHTML;
+           tagElement.innerHTML = '';
+        }
+        else if(document.getElementById(alt2).innerHTML=='') {
+           document.getElementById(alt2).innerHTML = tagElement.innerHTML;
+           tagElement.innerHTML = '';
+        }
+        else if(document.getElementById(alt3).innerHTML=='') {
+           document.getElementById(alt3).innerHTML = tagElement.innerHTML;
+           tagElement.innerHTML = '';
+        }
+        else if(document.getElementById(alt4).innerHTML=='') {
+           document.getElementById(alt4).innerHTML = tagElement.innerHTML;
+           tagElement.innerHTML = '';
+        }
+    }
+
+
+
+</script>

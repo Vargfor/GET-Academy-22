@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .table {
+            height: 600px;
+            width: 600px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            /* grid-template-rows: 200px 200px 200px;  */
+            grid-template-areas:
+                'row1'
+                'row2'
+                'row3';
+            padding-bottom: 50px;
+            color: blue;
+            text-align: center;
+        }
+
+        .layout1 {
+            display: none;
+        }
+
+        .color1 {
+            background-color: white;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+        }
+
+        .color2 {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+        }
+        .color3 {
+            background-color: rgb(0, 255, 21);
+            height: 200px;
+            width: 200px;
+            border: 2px solid rgb(255, 0, 200);
+        }
+        .color4 {
+            background-color: rgb(32, 7, 255);
+            height: 200px;
+            width: 200px;
+            border: 2px solid orange;
+        }
+    </style>
+
+</head>
+
+<body onload="initialPage()">
+    <div class="table" id="tableBilde">
+        <div class="row1">
+            <div class="color1"></div>
+            <div class="color2"></div>
+            <div class="color1"></div>
+        </div>
+        <div class="row2">
+            <div class="color2"></div>
+            <div class="color1"></div>
+            <div class="color2"></div>
+        </div>
+        <div class="row3">
+            <div class="color1"></div>
+            <div class="color2"></div>
+            <div class="color1"></div>
+        </div>
+    </div>
+
+
+
+    </div>
+    <div class="buttons">
+        <button id="visBilde" onclick="visBilde()">Vis Bilde</button><button id="clearBilde" onclick="clearFunc()">Fjern
+            alt</button><button class="nyeFarger" onclick="nyeFarger()">Nye farger</button>
+    </div>
+
+    <script>
+        var newColor = document.getElementsByClassName('color1');
+        console.log(newColor);
+        var testerer = document.getElementById('tableBilde');
+        console.log(testerer);
+
+        var tableVari = document.getElementsByClassName('table', 'color1');
+        console.log(tableVari);
+
+        const boxes = document.querySelectorAll('.color1');
+        const collor3_ = document.querySelectorAll('.color2');
+
+        function initialPage() {
+            document.getElementById('tableBilde').classList.add('layout1');
+        }
+
+        function clearFunc() {
+            document.getElementById('tableBilde').classList.add('layout1');
+        }
+
+        function visBilde() {
+            document.getElementById('tableBilde').classList = [];
+            document.getElementById('tableBilde').classList.add('table');
+        }
+        function nyeFarger(){
+            
+            for (const box of boxes){
+                box.classList.add('color3');
+            }
+            for (const box of collor3_){
+                box.classList.add('color4');
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

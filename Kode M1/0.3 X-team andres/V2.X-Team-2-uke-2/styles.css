@@ -1,0 +1,54 @@
+body {
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+}
+
+.block {
+    height: 100px;
+    width: 100px;
+    border: solid black 2px;
+    float: left;
+
+}
+
+.boxblock {
+    margin: 0 auto;
+    display: grid;
+} 
+
+.firstInLine {
+    clear: left;
+}
+
+.backgroundcolor {
+    background-color: #333333;
+}
+
+.X-team2{
+    padding: 10px;
+    text-align: center;
+    background:#1abc9c;
+    color: brown;
+    font-size: 25px;  
+}
+
+.white {
+    background-color: white;
+}
+.corners{
+border-radius: 25px;
+background: #1abc9c;
+width: 600px;
+height: 150px;
+}
+
+.imgpuzzle{
+    padding: 30px;    
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+

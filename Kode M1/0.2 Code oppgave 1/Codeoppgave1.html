@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="number" type="range" min="1" max="100" step="1" oninput="show()" />
+    <div id="info"></div>
+
+    <script>
+        function show() {
+            var valueTxt = document.getElementById('number').value;
+            var value = parseInt(valueTxt);
+            let html = `<p>Tallet er ${value}</p>`;
+            if (value > 50) html += '<p>Tallet er over 50</p>';
+            
+            document.getElementById('info').innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>

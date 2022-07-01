@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="script.js"></script> -->
+    <!-- <link rel="stylesheet" href="mvc.css"> -->
+
+    <style>
+   .color{
+       color: #fd4646;
+   }
+    </style>
+
+
+</head>
+
+<body id="Bodytag">
+    <div id="dropDiv"></div>
+    <div id="app"></div>    
+
+    <script>
+        //modell
+        const dropDiv = document.getElementById('dropDiv');
+        let appDiv = document.getElementById('app');
+
+        let outBackground = '';
+        let BgColor = ["Color", "black", "navy", "lightgray", "lime", "#fd4646"];
+        let Body = document.getElementById('Bodytag')
+        
+        //View
+ 
+        dropdownSelector();
+        function dropdownSelector() {
+            dropDiv.innerHTML = `
+            <select onChange="changeColor(this)">
+                <option value=${BgColor[0]}>Velg Farge</option>   
+                <option value=${BgColor[1]}>Black</option>   
+                <option value=${BgColor[2]}>Mørk Blå</option>    
+                <option value=${BgColor[3]}>Lys Grå</option>    
+                <option value=${BgColor[4]}>Lime</option>    
+                <option value=${BgColor[5]}>Lys rød</option>   
+                
+ 
+            </select>
+            `;
+          
+        }
+        
+        View();
+        function View() {
+            appDiv.innerHTML = ` 
+            <div class="content"  style=" background-color: ${outBackground}">
+            <p style=" color: ${outBackground == "black" ? "white" : "black" }"> ${outBackground == "black" ? "Oi, her var det mørkt!" : "Hei på deg!"}</p>
+            </div>`;
+          
+        }
+
+        //controller
+
+        function changeColor(select) {
+            console.log(select.value, " dette er select");
+            outBackground = select.value;
+    
+            View();
+
+        }
+
+    </script>
+</body>
+
+</html>

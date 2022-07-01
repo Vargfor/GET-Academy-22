@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="controller.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        // model
+        const persons = [];
+        let personName = '';
+
+        // view 
+        updateView();
+        function updateView() {
+            let personsHtml = '';
+            for (let i = 0; i < persons.length; i++) {
+                const person = persons[i];
+                personsHtml += `<li>${person} <button onclick="deletePerson(${i})">x</button></li>`;
+            }
+            const html = personsHtml === ''
+                ? `<i>Ingen påmeldte</i>`
+                : `<ul>${personsHtml}</ul>`;
+            const noRegistrationsMessage = persons.length === 0 ? '<p><i>Ingen påmeldte</i></p>' : '';
+            document.getElementById('app').innerHTML = `
+                <h3>Påmeldte</h3>
+                <ul>
+                    ${personsHtml}
+                </ul>     
+                ${noRegistrationsMessage}        
+                <b>Påmelding:</b> 
+                Navn: 
+                <input type="text" oninput="personName=this.value" />
+                <button onclick="register()">Meld på</button>
+            `;
+        }
+
+        // hjelpefunksjoner
+        // function el(id) {
+        //     return document.getElementById('person')
+        // }
+
+    </script>
+</body>
+
+</html>

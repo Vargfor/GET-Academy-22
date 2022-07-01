@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huskeliste</title>
+    <link rel="stylesheet" href="Style.css">
+
+</head>
+
+<body>
+    <div id="Header" class="Header"></div>
+    <div>
+        <div id="Body" class="Body"></div>
+    </div>
+
+    <script>
+        //Hjelpevariabler
+        const Header = document.getElementById('Header');
+        const app = document.getElementById('Body');
+
+
+        // console.log(optPri);
+
+        //Model
+        let Priority = ["", "", "", "", "", ""];
+
+        let doneGroup = {
+            State: ["Velg hvor ferdig", "Fullført", "Nesten ferdig", "Ikke mulig"],
+            color: ["Black", "Green", "Orange", "Red"]
+        };
+        let todoList = {
+            Priority: ["1",""],
+            writtenTask: ["Help Me",""]
+        };
+
+        let toDoTask = '';
+        let taskInput = '';
+
+        let optPri = '';
+        let optDone = '';
+        let TaskParts = '';
+        let colorCompTask = '';
+
+        let inputTaskText = document.getElementsByName("Task");
+        let inputTaskPriority = document.getElementsByName("taskPri");
+        let currentPri = document.getElementsByName("taskPri");
+
+        //View
+        RepeatingLines();
+        function RepeatingLines() {
+            for (let i = 1; i < Priority.length; i++) {
+                optPri += CreateOptPri(i);
+            }
+            for (let i = 0; i < doneGroup.State.length; i++) {
+                optDone += CreateOptDone(i);
+
+            }
+            for (let i = 0; i < todoList.Priority.length; i++) {
+                TaskParts += CreateListElement(i);
+            }
+
+        }
+
+        function CreateOptPri(i) {
+            return `<option class="optPriority" Value="${i}" >${i}</option>`
+        }
+
+        function CreateOptDone(a) {
+            return `<option class="optDone" value="${doneGroup.State[a]}" style="color: ${doneGroup.color[a]};" >${doneGroup.State[a]}</option>`
+        }
+
+        function CreateListElement(b){
+            return `<p> ${todoList.Priority[b]} - ${todoList.writtenTask[b]} </p>`
+        }
+
+        MainView();
+        function MainView() {
+            let htmlTop = ``;
+
+            Header.innerHTML += /*HTML*/ `
+            <div>
+                <h1>Huskeliste</h1>
+                <p>Legg til Prioritering (1-5) og oppgave:</p>
+            </div>
+            `;
+            htmlTop += /*HTML*/ `
+            
+            <div class="taskLine">
+                <select name="taskPri" class="priority" style="height: 25px; width: 50px; font-size: large; margin: 10px;" >
+                    ${optPri}
+                </select>
+                <input name="Task" class="Input" type="text" placeholder="Skriv inn oppgave" required> 
+                <button class="addBtn" onclick="addTask()"> Leggtil </button>
+            </div>
+        <div class="bigContainer">
+
+            <div class="mindreContainers">
+                <h4>To do:</h4>
+                <div class="toDo"> ${TaskParts}</div>
+            </div>
+
+            <div class="taskDoneness">
+                <select class="ferdig" >
+                    ${optDone}
+                </select>
+                <button class="doneBtn" onclick="Completed()"> Overfør </button>       
+            </div>
+
+            <div class="mindreContainers">
+                <h4>Checked status:</h4>
+                <div class="completedContent">
+                    <p Style="color:Orange;">Help Me</p>
+                </div>
+        </div>
+
+            </div>
+            `;
+            app.innerHTML = htmlTop;
+        }
+
+        //controller
+
+        function addTask(){
+            todoList.writtenTask.push(inputTaskText);
+            todoList.Priority.push(inputTaskPriority);
+        }
+
+    </script>
+</body>
+
+</html>

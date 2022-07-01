@@ -1,0 +1,92 @@
+body {
+    justify-content: center;
+    display: grid;
+    height: auto;
+    width: auto;
+    
+}
+
+.img {
+    background-image: url('https://wallpaperaccess.com/full/3645474.jpg');
+}
+
+.backColor {
+    background-color: #579FDA;
+}
+
+#parentBlock {
+    width: 306px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    border: 4px solid rgb(48, 51, 52);
+    border-radius: 10px;
+    height: 306px;
+    margin: auto;
+}
+
+.block {
+    height: 100px;
+    width: 100px;
+    border: solid rgb(48, 51, 52) 1px;
+    float: left;
+    cursor: pointer;
+}
+
+.firstInLine {
+    clear: left;
+
+}
+
+.pink {
+    background-color: palevioletred;
+}
+
+.purple {
+    background-color: rgb(219, 106, 219);
+}
+
+.blue {
+    background-color: rgb(134, 134, 255);
+}
+.green {
+    background-color: rgb(162, 255, 162);
+}
+
+.yellow {
+    background-color: rgb(255, 255, 128);
+}
+
+.black {
+    background-color: rgb(48, 51, 52);
+}
+
+.white {
+    background-color: white;
+}
+
+button {
+    margin-top: 5%;
+    border: 5px solid rgb(48, 51, 52);
+    border-radius: 10px;
+    background-color: rgb(48, 51, 52);
+    color: aliceblue;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 150px;
+    display: inline-block;
+    cursor: pointer;
+
+}
+.Header {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    border: 5px solid rgb(48, 51, 52);
+    background-color: rgb(48, 51, 52);
+    color: aliceblue;
+    border-radius: 10px;
+    text-align: center;
+    width: 306px;
+    cursor: pointer;
+}

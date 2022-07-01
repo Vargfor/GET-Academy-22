@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+    <script>
+        //Hjelpevariabel
+        let appDiv = document.getElementById('app');
+        
+
+        //Model
+
+        let Bredde = '1';
+        let Høyde = '1';
+        let resultat = '';
+
+        var tallH = Bredde;
+        var tallB = Høyde;
+        var Areal = tallH * tallB;
+        var Omkrets = (2 * tallH) + (2 * tallB);
+
+
+        //View
+        View();
+        function View() {
+            let html ='';
+
+            html = /*HTML*/ `           
+            <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+            <input type="range" min="1" max="100" step="1" oninput="calculate()" value="${Bredde}" />
+            <input type="range" min="1" max="100" step="1" oninput="calculate()" value="${Høyde}" />
+            <div>${resultat}</div>
+            `
+            appDiv.innerHTML= html;
+
+        }
+
+
+        //controller
+
+        function calculate() {
+            if (Bredde || Høyde > '0' ){
+             resultat  = '' + 'Areal:' + '<br/>' +
+                tallH + '*' + tallB + '=' + Areal + 'CM' + '<br/>' +
+                'Omkrets:' + '<br/>' +
+                '(2' + '*' + tallH + ')+(' + '2' + '*' + tallB + ')=' + Omkrets + 'CM';
+            }
+
+        View();
+
+        }
+
+        
+    </script>
+</body>
+
+</html>
